@@ -1,6 +1,6 @@
 # 🎵 Music Finder
 
-Una aplicación **React** moderna y de alto rendimiento diseñada para descubrir música. Construida con un enfoque en estética premium, animaciones fluidas y una experiencia de usuario responsiva.
+Una aplicación **React** moderna diseñada para descubrir música. Construida con un enfoque en estética premium, animaciones fluidas y una experiencia de usuario responsiva.
 
 ## ✨ Características Principales
 
@@ -10,10 +10,6 @@ Una aplicación **React** moderna y de alto rendimiento diseñada para descubrir
 - **✨ Visual Feedback**: 
   - **Skeleton Loading**: Pantallas de carga tipo "skeleton" pulidas para proporcionar continuidad visual mientras se obtienen los datos (data fetching).
   - **Interactive Cards**: Tarjetas de pistas (**Track Cards**) que muestran el arte del álbum, metadatos (Artist, Album, Duration) y un slider de reproducción interactivo.
-- **🎨 UI/UX Premium**: 
-  - Estética en modo oscuro (**Dark Mode**) con gradientes vibrantes índigo/púrpura (`#E01FD0` a `#73106B`).
-  - Arquitectura de componentes SVG personalizados para un lenguaje visual consistente.
-  - Implementado con **Tailwind CSS v4** y **DaisyUI v5** para capacidades de estilo modernas.
   
 
 ## 🛠️ Tech Stack
@@ -22,6 +18,8 @@ Una aplicación **React** moderna y de alto rendimiento diseñada para descubrir
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) + [DaisyUI 5](https://daisyui.com/)
 - **State Management**: [Zustand](https://zustand-demo.pmnd.rs/) para un manejo de estado global simple y escalable.
 - **Icons**: Arquitectura de componentes SVG.
+
+<img width="1142" height="855" alt="image" src="https://github.com/user-attachments/assets/2f418f67-7d99-4cd3-94f4-d9b85066840d" />
 
 ## 🚀 Getting Started
 
