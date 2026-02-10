@@ -10,12 +10,12 @@ export default function TrackCard() {
                     </figure>
                     <h2 className="card-title text-white">Track Name</h2>
                     <p className="text-gray-500">Artist Name</p>
+                    <p className="text-gray-500">Album Name</p>
 
-                    //btn+progress
                     <div className="mt-4 flex items-center gap-4">
                         <button
                             type="button"
-                            className="h-12 w-12 rounded-full bg-[#73106B] text-white grid place-items-center"
+                            className="cursor-pointer h-8 w-8 rounded-full bg-[#73106B] text-white grid place-items-center"
                             aria-label="Play"
                             title="Play"
                         >
@@ -28,10 +28,10 @@ export default function TrackCard() {
                                 min="0"
                                 max="100"
                                 defaultValue="0"
-                                className="range range-xs"
+                                className="my-range range h-1"
                             />
 
-                            <div className="mt-1 flex justify-between text-xs text-gray-500">
+                            <div className="mt-1 flex justify-between text-xs text-gray-600">
                                 <span>0:00</span>
                                 <span>0:30</span>
                             </div>
