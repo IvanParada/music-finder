@@ -1,16 +1,72 @@
-# React + Vite
+# 🎵 Music Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación **React** moderna y de alto rendimiento diseñada para descubrir música. Construida con un enfoque en estética premium, animaciones fluidas y una experiencia de usuario responsiva.
 
-Currently, two official plugins are available:
+## ✨ Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **🔍 Smart Search**: Una barra de búsqueda intuitiva con efectos de sombra "glowing" para encontrar artistas, canciones o álbumes fácilmente.
+- **🎛️ Dynamic Filtering**: Un slider tipo "toggle" con animación "bounce" personalizada (cubic-bezier) para cambiar el contexto entre **Songs** y **Albums**.
+- **📱 Responsive Grid Layout**: Los resultados se muestran en una grilla responsiva que se adapta elegantemente desde dispositivos móviles hasta pantallas de escritorio (desktop).
+- **✨ Visual Feedback**: 
+  - **Skeleton Loading**: Pantallas de carga tipo "skeleton" pulidas para proporcionar continuidad visual mientras se obtienen los datos (data fetching).
+  - **Interactive Cards**: Tarjetas de pistas (**Track Cards**) que muestran el arte del álbum, metadatos (Artist, Album, Duration) y un slider de reproducción interactivo.
+- **🎨 UI/UX Premium**: 
+  - Estética en modo oscuro (**Dark Mode**) con gradientes vibrantes índigo/púrpura (`#E01FD0` a `#73106B`).
+  - Arquitectura de componentes SVG personalizados para un lenguaje visual consistente.
+  - Implementado con **Tailwind CSS v4** y **DaisyUI v5** para capacidades de estilo modernas.
+  
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Core**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) + [DaisyUI 5](https://daisyui.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/) para un manejo de estado global simple y escalable.
+- **Icons**: Arquitectura de componentes SVG.
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Sigue estos pasos para correr el proyecto localmente:
+
+### Prerrequisitos
+Asegúrate de tener **Node.js** instalado en tu máquina.
+
+### Instalación
+
+1. **Clonar el repositorio**
+   ```bash
+   git clone <repository-url>
+   cd music-finder
+   ```
+
+2. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar el servidor de desarrollo**
+   ```bash
+   npm run dev
+   ```
+
+4. Abre tu navegador y navega a `http://localhost:5173` (o la URL que se muestre en tu terminal).
+
+## 📂 Estructura del Proyecto
+
+```
+src/
+├── assets/          # Iconos SVG personalizados y assets estáticos
+├── features/        # Arquitectura modular basada en funcionalidades (Features)
+│   └── music/       # Lógica del dominio "Music"
+│       ├── components/  # Componentes UI (FilterBar, SearchBar, ResultsGrid, TrackCard)
+│       ├── store/       # Manejo de estado con Zustand
+│       └── MusicPage.jsx # Punto de entrada principal del feature
+├── shared/          # Componentes compartidos (Navbar, SkeletonCard)
+└── main.jsx         # Punto de entrada de la aplicación
+```
+
+## 📜 Scripts Disponibles
+
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Construye la aplicación para producción.
+- `npm run preview`: Previsualiza localmente la build de producción.
+- `npm run lint`: Ejecuta ESLint para verificar la calidad del código.

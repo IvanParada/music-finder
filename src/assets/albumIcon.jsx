@@ -1,0 +1,5 @@
+export default function AlbumIcon() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width={18} height={18} viewBox="0 0 24 24"><g fill="none"><path fill="#EB6FE1" fillOpacity={0.16} fillRule="evenodd" d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-6 0a4 4 0 1 1-8 0a4 4 0 0 1 8 0" clipRule="evenodd"></path><path stroke="#EB6FE1" strokeLinejoin="round" strokeMiterlimit={10} strokeWidth={1.5} d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10Z"></path><path stroke="#EB6FE1" strokeLinejoin="round" strokeMiterlimit={10} strokeWidth={1.5} d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8Z"></path><path stroke="#EB6FE1" strokeLinejoin="round" strokeMiterlimit={10} strokeWidth={1.5} d="M12 13a1 1 0 1 0 0-2a1 1 0 0 0 0 2Z"></path></g></svg>
+    );
+}
