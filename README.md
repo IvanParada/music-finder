@@ -51,15 +51,47 @@ Asegúrate de tener **Node.js** instalado en tu máquina.
 ## 📂 Estructura del Proyecto
 
 ```
-src/
-├── assets/          # Iconos SVG personalizados y assets estáticos
-├── features/        # Arquitectura modular basada en funcionalidades (Features)
-│   └── music/       # Lógica del dominio "Music"
-│       ├── components/  # Componentes UI (FilterBar, SearchBar, ResultsGrid, TrackCard)
-│       ├── store/       # Manejo de estado con Zustand
-│       └── MusicPage.jsx # Punto de entrada principal del feature
-├── shared/          # Componentes compartidos (Navbar, SkeletonCard)
-└── main.jsx         # Punto de entrada de la aplicación
+├── 📁 public
+│   └── 🖼️ vite.svg
+├── 📁 src
+│   ├── 📁 app
+│   │   └── 📄 App.jsx
+│   ├── 📁 assets
+│   │   ├── 📄 albumIcon.jsx
+│   │   ├── 📄 artistIcon.jsx
+│   │   ├── 📄 index.js
+│   │   ├── 📄 musicIcon.jsx
+│   │   ├── 📄 noteIcon.jsx
+│   │   ├── 📄 playIcon.jsx
+│   │   └── 📄 searchIcon.jsx
+│   ├── 📁 features
+│   │   └── 📁 music
+│   │       ├── 📁 api
+│   │       │   └── 📄 itunes.js
+│   │       ├── 📁 components
+│   │       │   ├── 📄 FavoritesDrawer.jsx
+│   │       │   ├── 📄 FilterBar.jsx
+│   │       │   ├── 📄 ResultsGrid.jsx
+│   │       │   ├── 📄 SearchBar.jsx
+│   │       │   └── 📄 TrackCard.jsx
+│   │       ├── 📁 store
+│   │       │   └── 📄 useMusicStore.js
+│   │       └── 📄 MusicPage.jsx
+│   ├── 📁 shared
+│   │   ├── 📁 components
+│   │   │   ├── 📄 Navbar.jsx
+│   │   │   └── 📄 SkeletonCard.jsx
+│   │   └── 📁 lib
+│   │       └── 📄 http.js
+│   ├── 🎨 index.css
+│   └── 📄 main.jsx
+├── ⚙️ .gitignore
+├── 📝 README.md
+├── 📄 eslint.config.js
+├── 🌐 index.html
+├── ⚙️ package-lock.json
+├── ⚙️ package.json
+└── 📄 vite.config.js
 ```
 
 ## 📜 Scripts Disponibles
