@@ -2,6 +2,10 @@
 
 Una aplicación **React** moderna diseñada para descubrir música. Construida con un enfoque en estética premium, animaciones fluidas y una experiencia de usuario responsiva.
 
+```
+https://music-finder-seven.vercel.app
+```
+
 ## ✨ Características Principales
 
 - **🔍 Smart Search**: Una barra de búsqueda intuitiva con efectos de sombra "glowing" para encontrar artistas, canciones o álbumes fácilmente.
