@@ -1,25 +1,66 @@
 import { create } from "zustand";
+import { searchSongs } from "../api/itunes";
 
-export const useMusicStore = create((set) => ({
+export const useMusicStore = create((set, get) => {
+  let audio = new Audio();
+
+  audio.addEventListener("timeupdate", () => {
+    set({
+      currentTime: audio.currentTime,
+      duration: audio.duration || 0,
+    });
+  });
+
+  audio.addEventListener("ended", () => {
+    set({ isPlaying: false });
+  });
+
+  return {
     results: [],
     loading: false,
+    currentTrack: null,
+    isPlaying: false,
+    currentTime: 0,
+    duration: 0,
 
     fetchResults: async () => {
-        set({ loading: true });
-
-        // Simulate API delay
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-
-        set({
-            results: [
-                { id: 1, title: "Bohemian Rhapsody", artist: "Queen", album: "A Night at the Opera", duration: "5:55", genre: "Rock" },
-                { id: 2, title: "Billie Jean", artist: "Michael Jackson", album: "Thriller", duration: "4:54", genre: "Pop" },
-                { id: 3, title: "Stairway to Heaven", artist: "Led Zeppelin", album: "Led Zeppelin IV", duration: "8:02", genre: "Rock" },
-                { id: 4, title: "Smells Like Teen Spirit", artist: "Nirvana", album: "Nevermind", duration: "5:01", genre: "Grunge" },
-                { id: 5, title: "Hotel California", artist: "Eagles", album: "Hotel California", duration: "6:30", genre: "Rock" },
-                { id: 6, title: "Like a Rolling Stone", artist: "Bob Dylan", album: "Highway 61 Revisited", duration: "6:13", genre: "Folk Rock" },
-            ],
-            loading: false,
-        });
+      set({ loading: true });
+      try {
+        const results = await searchSongs();
+        set({ results, loading: false });
+      } catch (error) {
+        console.error("Error fetching songs:", error);
+        set({ loading: false });
+      }
     },
-}));
+
+    playTrack: (track) => {
+      const { currentTrack, isPlaying } = get();
+
+      if (currentTrack?.id === track.id) {
+        if (isPlaying) {
+          audio.pause();
+          set({ isPlaying: false });
+        } else {
+          audio.play();
+          set({ isPlaying: true });
+        }
+        return;
+      }
+
+      audio.src = track.previewUrl;
+      audio.play();
+
+      set({
+        currentTrack: track,
+        isPlaying: true,
+        currentTime: 0,
+      });
+    },
+
+    seek: (time) => {
+      audio.currentTime = time;
+      set({ currentTime: time });
+    },
+  };
+});

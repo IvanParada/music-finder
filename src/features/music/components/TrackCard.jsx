@@ -1,14 +1,33 @@
-import { PlayIcon, NoteIcon, ArtistIcon, AlbumIcon } from "../../../assets";
+import {
+  PlayIcon,
+  NoteIcon,
+  ArtistIcon,
+  AlbumIcon,
+  PauseIcon,
+} from "../../../assets";
+import { useMusicStore } from "../store/useMusicStore";
+import { formatTime } from "../../../shared/helper/helper";
 
 export default function TrackCard({ track }) {
+  const playTrack = useMusicStore((s) => s.playTrack);
+  const currentTrack = useMusicStore((s) => s.currentTrack);
+  const isPlaying = useMusicStore((s) => s.isPlaying);
+
+  const currentTime = useMusicStore((s) => s.currentTime);
+  const duration = useMusicStore((s) => s.duration);
+  const seek = useMusicStore((s) => s.seek);
+
+  const isActive = currentTrack?.id === track.id;
+
   return (
     <>
       <div className="card w-full bg-[#0c0109] shadow-xl rounded-xl">
         <div className="card-body">
           <figure className="rounded-xl">
             <img
-              src="https://m.media-amazon.com/images/I/71ZSwecW9JL._AC_UF894,1000_QL80_.jpg"
-              alt="Shoes"
+              src={track.artworkUrl}
+              alt={track.title}
+              className="w-full h-full object-cover"
             />
           </figure>
           <p className="card-title text-white flex items-center gap-2">
@@ -27,25 +46,27 @@ export default function TrackCard({ track }) {
           <div className="mt-4 flex items-center gap-4">
             <button
               type="button"
+              onClick={() => playTrack(track)}
               className="cursor-pointer h-8 w-8 rounded-full bg-[#73106B] text-white grid place-items-center"
               aria-label="Play"
               title="Play"
             >
-              <PlayIcon />
+              {isActive && isPlaying ? <PauseIcon /> : <PlayIcon />}
             </button>
 
             <div className="flex-1">
-              <input
-                type="range"
-                min="0"
-                max="100"
-                defaultValue="0"
-                className="my-range range h-1"
-              />
-
-              <div className="mt-1 flex justify-between text-xs text-gray-600">
-                <span>0:00</span>
-                <span>{track.duration}</span>
+              {isActive && (
+                <input
+                  type="range"
+                  min="0"
+                  max={duration}
+                  value={currentTime}
+                  onChange={(e) => seek(e.target.value)}
+                  className="my-range range h-1"
+                />
+              )}
+              <div className="mt-1 flex justify-end text-xs text-gray-600">
+                <span>{formatTime(duration)}</span>
               </div>
             </div>
           </div>
