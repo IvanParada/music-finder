@@ -7,10 +7,9 @@ Una aplicación **React** moderna diseñada para descubrir música. Construida c
 - **🔍 Smart Search**: Una barra de búsqueda intuitiva con efectos de sombra "glowing" para encontrar artistas, canciones o álbumes fácilmente.
 - **🎛️ Dynamic Filtering**: Un slider tipo "toggle" con animación "bounce" personalizada (cubic-bezier) para cambiar el contexto entre **Songs** y **Albums**.
 - **📱 Responsive Grid Layout**: Los resultados se muestran en una grilla responsiva que se adapta elegantemente desde dispositivos móviles hasta pantallas de escritorio (desktop).
-- **✨ Visual Feedback**: 
+- **✨ Visual Feedback**:
   - **Skeleton Loading**: Pantallas de carga tipo "skeleton" pulidas para proporcionar continuidad visual mientras se obtienen los datos (data fetching).
   - **Interactive Cards**: Tarjetas de pistas (**Track Cards**) que muestran el arte del álbum, metadatos (Artist, Album, Duration) y un slider de reproducción interactivo.
-  
 
 ## 🛠️ Tech Stack
 
@@ -26,22 +25,26 @@ Una aplicación **React** moderna diseñada para descubrir música. Construida c
 Sigue estos pasos para correr el proyecto localmente:
 
 ### Prerrequisitos
+
 Asegúrate de tener **Node.js** instalado en tu máquina.
 
 ### Instalación
 
 1. **Clonar el repositorio**
+
    ```bash
    git clone <repository-url>
    cd music-finder
    ```
 
 2. **Instalar dependencias**
+
    ```bash
    npm install
    ```
 
 3. **Iniciar el servidor de desarrollo**
+
    ```bash
    npm run dev
    ```
@@ -70,7 +73,6 @@ Asegúrate de tener **Node.js** instalado en tu máquina.
 │   │       │   └── 📄 itunes.js
 │   │       ├── 📁 components
 │   │       │   ├── 📄 FavoritesDrawer.jsx
-│   │       │   ├── 📄 FilterBar.jsx
 │   │       │   ├── 📄 ResultsGrid.jsx
 │   │       │   ├── 📄 SearchBar.jsx
 │   │       │   └── 📄 TrackCard.jsx
