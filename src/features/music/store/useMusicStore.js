@@ -23,10 +23,10 @@ export const useMusicStore = create((set, get) => {
     currentTime: 0,
     duration: 0,
 
-    fetchResults: async () => {
+    fetchResults: async (term = "Extremoduro") => {
       set({ loading: true });
       try {
-        const results = await searchSongs();
+        const results = await searchSongs(term);
         set({ results, loading: false });
       } catch (error) {
         console.error("Error fetching songs:", error);

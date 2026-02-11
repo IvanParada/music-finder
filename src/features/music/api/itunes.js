@@ -1,4 +1,4 @@
-export const searchSongs = async (term = "Extremoduro") => {
+export const searchSongs = async (term) => {
   const response = await fetch(
     `https://itunes.apple.com/search?term=${term}&media=music&limit=12`,
   );

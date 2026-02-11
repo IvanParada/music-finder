@@ -30,17 +30,17 @@ export default function TrackCard({ track }) {
               className="w-full h-full object-cover"
             />
           </figure>
-          <p className="card-title text-white flex items-center gap-2">
-            <NoteIcon />
-            {track.title}
+          <p className="card-title text-white flex gap-2" title={track.title}>
+            <NoteIcon className="shrink-0 mt-1" />
+            <span className="line-clamp-2">{track.title}</span>
           </p>
-          <p className="text-gray-500 flex items-center gap-2">
-            <ArtistIcon />
-            {track.artist}
+          <p className="text-gray-500 flex gap-2" title={track.artist}>
+            <ArtistIcon className="shrink-0 mt-1" />
+            <span className="line-clamp-2">{track.artist}</span>
           </p>
-          <p className="text-gray-500 flex items-center gap-2">
-            <AlbumIcon />
-            {track.album}
+          <p className="text-gray-500 flex gap-2" title={track.album}>
+            <AlbumIcon className="shrink-0 mt-1" />
+            <span className="line-clamp-2">{track.album}</span>
           </p>
 
           <div className="mt-4 flex items-center gap-4">
