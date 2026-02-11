@@ -1,7 +1,13 @@
-export const searchSongs = async (term) => {
-  const response = await fetch(
-    `https://itunes.apple.com/search?term=${term}&media=music&limit=12`,
-  );
+const ITUNES_BASE_URL = import.meta.env.VITE_ITUNES_BASE_URL;
+
+export const searchSongs = async (term, limit = 12) => {
+  console.log("baseurl", ITUNES_BASE_URL);
+  const url = new URL("/search", ITUNES_BASE_URL);
+  url.searchParams.set("term", String(term));
+  url.searchParams.set("media", "music");
+  url.searchParams.set("limit", String(limit));
+
+  const response = await fetch(url);
   const data = await response.json();
   return data.results.map((result) => ({
     id: result.trackId,
