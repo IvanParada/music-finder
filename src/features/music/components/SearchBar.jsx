@@ -16,7 +16,7 @@ export default function SearchBar() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="flex items-center justify-center my-10 border-2 border-none rounded-2xl w-[60%] mx-auto px-5 h-15 shadow-[0px_0px_250px_30px_#702459]">
+        <div className="flex items-center justify-center my-10 border-2 border-none rounded-2xl lg:w-[60%] md:w-[80%] w-[90%] mx-auto px-5 h-15 shadow-[0px_0px_250px_30px_#702459]">
           <SearchIcon />
           <input
             type="text"
