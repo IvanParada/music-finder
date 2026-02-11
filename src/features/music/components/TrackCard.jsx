@@ -1,53 +1,56 @@
-import { PlayIcon, NoteIcon, ArtistIcon, AlbumIcon } from '../../../assets';
+import { PlayIcon, NoteIcon, ArtistIcon, AlbumIcon } from "../../../assets";
 
 export default function TrackCard({ track }) {
-    return (
-        <>
-            <div className="card w-full bg-[#0c0109] shadow-xl rounded-xl">
-                <div className="card-body">
-                    <figure className="rounded-xl">
-                        <img src="https://m.media-amazon.com/images/I/71ZSwecW9JL._AC_UF894,1000_QL80_.jpg" alt="Shoes" />
-                    </figure>
-                    <p className="card-title text-white flex items-center gap-2">
-                        <NoteIcon />
-                        {track.title}
-                    </p>
-                    <p className="text-gray-500 flex items-center gap-2">
-                        <ArtistIcon />
-                        {track.artist}
-                    </p>
-                    <p className='flex items-center gap-2'>
-                        <AlbumIcon />
-                        <p className="text-gray-500">{track.album}</p>
-                    </p>
+  return (
+    <>
+      <div className="card w-full bg-[#0c0109] shadow-xl rounded-xl">
+        <div className="card-body">
+          <figure className="rounded-xl">
+            <img
+              src="https://m.media-amazon.com/images/I/71ZSwecW9JL._AC_UF894,1000_QL80_.jpg"
+              alt="Shoes"
+            />
+          </figure>
+          <p className="card-title text-white flex items-center gap-2">
+            <NoteIcon />
+            {track.title}
+          </p>
+          <p className="text-gray-500 flex items-center gap-2">
+            <ArtistIcon />
+            {track.artist}
+          </p>
+          <p className="text-gray-500 flex items-center gap-2">
+            <AlbumIcon />
+            {track.album}
+          </p>
 
-                    <div className="mt-4 flex items-center gap-4">
-                        <button
-                            type="button"
-                            className="cursor-pointer h-8 w-8 rounded-full bg-[#73106B] text-white grid place-items-center"
-                            aria-label="Play"
-                            title="Play"
-                        >
-                            <PlayIcon />
-                        </button>
+          <div className="mt-4 flex items-center gap-4">
+            <button
+              type="button"
+              className="cursor-pointer h-8 w-8 rounded-full bg-[#73106B] text-white grid place-items-center"
+              aria-label="Play"
+              title="Play"
+            >
+              <PlayIcon />
+            </button>
 
-                        <div className="flex-1">
-                            <input
-                                type="range"
-                                min="0"
-                                max="100"
-                                defaultValue="0"
-                                className="my-range range h-1"
-                            />
+            <div className="flex-1">
+              <input
+                type="range"
+                min="0"
+                max="100"
+                defaultValue="0"
+                className="my-range range h-1"
+              />
 
-                            <div className="mt-1 flex justify-between text-xs text-gray-600">
-                                <span>0:00</span>
-                                <span>{track.duration}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div className="mt-1 flex justify-between text-xs text-gray-600">
+                <span>0:00</span>
+                <span>{track.duration}</span>
+              </div>
             </div>
-        </>
-    )
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
