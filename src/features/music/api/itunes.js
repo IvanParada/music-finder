@@ -1,7 +1,6 @@
 const ITUNES_BASE_URL = import.meta.env.VITE_ITUNES_BASE_URL;
 
 export const searchSongs = async (term, limit = 12) => {
-  console.log("baseurl", ITUNES_BASE_URL);
   const url = new URL("/search", ITUNES_BASE_URL);
   url.searchParams.set("term", String(term));
   url.searchParams.set("media", "music");
